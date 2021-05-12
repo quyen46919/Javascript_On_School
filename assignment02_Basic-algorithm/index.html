@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic algorithm</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="line">
+        <div class="input-wrapper">
+            <div class="title-block">
+                <h2>1. Kiểm tra số nguyên tố</h2>
+            </div>
+            <form action="" id="form1" class="form">
+                <div class="animation-input">
+                    <input type="number" name="snt" id="snt" required class="form1__input">
+                    <div class="underline"></div>
+                    <label for="">Nhập số: </label>
+                </div>
+                <button type="reset" id="form1__reset" class="reset-btn">Reset</button>
+            </form>
+            <div class="form__result form1__result"></div>
+        </div>
+        <!-- Số bạn nhập không phải là số nguyên tố! -->
+    
+        <div class="input-wrapper">
+            <div class="title-block">
+                <h2>1. Kiểm tra số song tố</h2>
+            </div>
+            <form action="" id="form3" class="form">
+                <div class="animation-input">
+                    <input type="number" name="snt" id="snt" required class="form3__input">
+                    <div class="underline"></div>
+                    <label for="">Nhập số: </label>
+                </div>
+                <button type="reset" id="form3__reset" class="reset-btn">Reset</button>
+            </form>
+            <div class="form__result form3__result"></div>
+        </div>
+    </div>
+
+    <!-- end 1 line -->
+
+    <div class="line">
+        <div class="input-wrapper">
+            <div class="title-block">
+                <h2>2. Kiểm tra số chính phương</h2>
+            </div>
+            <form action="" id="form2" class="form">
+                <div class="animation-input">
+                    <input type="number" name="snt" id="snt" required class="form2__input">
+                    <div class="underline"></div>
+                    <label for="">Nhập số: </label>
+                </div>
+                <button type="reset" id="form2__submit" class="reset-btn">Reset</button>
+            </form>
+            <div class="form__result form2__result"></div>
+        </div>
+        <!-- Số bạn nhập không phải là số nguyên tố! -->
+    
+        <div class="input-wrapper">
+            <div class="title-block">
+                <h2>2. Kiểm tra số hoàn hảo</h2>
+            </div>
+            <form action="" id="form4" class="form">
+                <div class="animation-input">
+                    <input type="number" name="snt" id="snt" required class="form4__input">
+                    <div class="underline"></div>
+                    <label for="">Nhập số: </label>
+                </div>
+                <button type="reset" id="form4__reset" class="reset-btn">Reset</button>
+            </form>
+            <div class="form__result form4__result"></div>
+        </div>
+    </div>
+
+    
+
+
+    <script src="checkPrime.js"></script>
+    <script src="checkSquare.js"></script>
+    <script src="checkDuplexNumber.js"></script>
+    <script src="checkPerfectNumber.js"></script>
+</body>
+</html>
