@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form action="" id="form" class="form">
+        <div class="form__inputs">
+            <div class="form__line">
+                <div class="form__input">
+                    <div class="animation-input">
+                        <input type="number" name="snt" required id="input1">
+                        <div class="underline"></div>
+                        <label for="">Nhập số tiền vay: </label>
+                    </div>
+                    <p>VND</p>
+                </div>
+            </div>
+            <div class="form__line">
+                <div class="form__input">
+                    <div class="animation-input">
+                        <input type="number" name="snt" required id="input2">
+                        <div class="underline"></div>
+                        <label for="">Thời gian vay: </label>
+                    </div>
+                    <p>Tháng</p>
+                </div>
+            </div>
+            <div class="form__line">
+                <div class="form__input animation-input">
+                    <div class="animation-input">
+                        <input type="number" name="snt" required id="input3">
+                        <div class="underline"></div>
+                        <label for="">Lãi suất: </label>
+                    </div>
+                    <p>%/năm</p>
+                </div>
+            </div>
+            <div class="form__line">
+                <div class="form__input">
+                    <div class="animation-input--2">
+                        <label for="">Ngày giải ngân: </label>
+                        <input type="date" required id="input4">
+                    </div>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div class="form_btn-wrapper">
+            <button type="submit" class="submit">Tính</button>
+            <button type="reset" class="reset">Đặt lại</button>
+        </div>
+    </form>
+
+    <div class="render-table">
+        <table >
+            <thead>
+                <tr>
+                    <th colspan="2">Kỳ trả nợ</th>
+                    <th>Số gốc còn lại</th>
+                    <th>Gốc</th>
+                    <th>Lãi</th>
+                    <th>Tổng gốc + lãi</th>
+                </tr>
+            </thead>
+            <tbody class="render-table__tbody">
+
+            </tbody>    
+        </table>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
