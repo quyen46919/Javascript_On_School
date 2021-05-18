@@ -84,4 +84,5 @@ submitButton.addEventListener('click', (e) => {
 });
 resetButton.addEventListener('click', (e) => {
     document.querySelector('.render-table__tbody').innerHTML = '';
+    isClicked = false;
 })
