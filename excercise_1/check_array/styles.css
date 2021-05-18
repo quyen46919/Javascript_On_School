@@ -5,6 +5,7 @@ body {
     padding: 3rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
     overflow-x: hidden;
     font-family: "Roboto";
 }
@@ -110,4 +111,7 @@ button[type="submit"]{
 }
 button[type="submit"]:hover{
     background: rgb(59, 140, 187);
+}
+.result{
+    margin-top: 2rem;
 }
