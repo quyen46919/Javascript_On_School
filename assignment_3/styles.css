@@ -11,6 +11,10 @@ body{
 }
 h3{
     margin: 1rem 0;
+    background: rgb(26, 84, 170);
+    color: white;
+    padding: 1rem;
+    text-align: center;
 }
 .student{
     margin: 0;
@@ -20,7 +24,46 @@ h3{
     padding: 0.6rem 2rem;
     border-radius: 3px;
     justify-content: space-between;
+    margin: 0.2rem 0;
+    background: #d4f2ff;
+    border: none;
+    cursor: pointer;
+    transition: all .25s;
 }
+.student:hover{
+    transform: scale(1.05);
+    background: #8adcff;
+}
+/* .student:nth-child(1){
+    background-color: rgb(15, 131, 151);
+}
+.student:nth-child(3){
+    background-color: rgb(19, 131, 165);
+}
+.student:nth-child(5){
+    background-color: rgb(235, 142, 21);
+}
+.student:nth-child(7){
+    background-color: rgb(189, 39, 144);
+}
+.student:nth-child(9){
+    background-color: rgb(30, 208, 214);
+}
+.student:nth-child(11){
+    background-color: rgb(187, 114, 19);
+}
+.student:nth-child(13){
+    background-color: rgb(212, 140, 44);
+}
+.student:nth-child(15){
+    background-color: rgb(64, 133, 24);
+}
+.student:nth-child(17){
+    background-color: rgb(202, 28, 28);
+}
+.student:nth-child(19){
+    background-color: rgb(175, 207, 31);
+} */
 .danh-sach{
     width: 70%;
 }
@@ -45,6 +88,7 @@ h3{
     border: none;
     padding: 0.1rem 1rem;
     transition: all .25s;
+    border-radius: 4px;
 }
 .filter button:hover{
     transform: scale(1.05);

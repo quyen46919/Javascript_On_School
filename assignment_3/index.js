@@ -1,5 +1,6 @@
 const showClass = document.querySelector('.show-class');
 const filterBtns = document.querySelectorAll('.filter-btn');
+
 // TẠO CLASS STUDENT
 class Student {
     constructor(name,mark,gender,subjects){
@@ -36,23 +37,11 @@ danhSach.push(user9);
 var user10 = new Student("Nguyễn Thị M", 9,"Nữ",[{"Ly": 9},{"Toan": 9}]);
 danhSach.push(user10);
 
-var backupDanhSach = danhSach;
+// CLONE ARRAY 
+var backupDanhSach = [...danhSach];
 
 function inDanhSach(arr){
-    showClass.innerHTML = '';
-    // for (let i = 0; i < arr.length; i++) {
-    //     const html = `
-    //     <div class="student">
-    //         <p>${i+1}: ${arr[i].name}</p>,
-    //          <p>điểm trung bình:  ${arr[i].mark}</p>, 
-    //          <p>giới tính: ${arr[i].gender}</p>, 
-    //          <p>điểm Lý: ${arr[i].subjects[0].Ly}</p>, 
-    //          <p>điểm Toán: ${arr[i].subjects[1].Toan}</p>
-    //     </div>
-    //     </br>
-    //     `.join('.');
-    //     showClass.innerHTML += html;
-    // }
+    
     var html = arr.map(student => `
     <div class="student">
               <p>${student.name}</p>
@@ -61,10 +50,9 @@ function inDanhSach(arr){
               <p>điểm Lý: ${student.subjects[0].Ly}</p>
               <p>điểm Toán: ${student.subjects[1].Toan}</p>
     </div>
-         </br>
     `
     ).join('');
-    showClass.innerHTML += html;
+    showClass.innerHTML = html;
 }
 inDanhSach(danhSach);
 
@@ -149,47 +137,19 @@ filterBtns[4].addEventListener('click',function(){
 });
 
 // 6. TÌM SINH VIÊN CÓ ĐIỂM TOÁN CAO NHẤT VÀ THẤP NHẤT
-function sinhVienCoDiemToanCaoNhat(arr){
-    const maxToan = arr.reduce((prev, current) => (prev.y > current.y) ? prev : current);
-    console.log("Sinh viên có điểm toán cao nhất là");
-    console.log(maxToan);
-    // inDanhSach(maxToan);
-
-    showClass.innerHTML = `
-    <div class="student">
-        <p>${maxToan.name}</p>
-        <p>điểm trung bình:  ${maxToan.mark}</p>
-        <p>giới tính: ${maxToan.gender}</p>
-        <p>điểm Lý: ${maxToan.subjects[0].Ly}</p>
-        <p>điểm Toán: ${maxToan.subjects[1].Toan}</p>
-        </div>
-    </br>
-    `;
+function sinhVienCoDiemToanCaoNhatVaThapNhat(arr){
+    var maxToan = arr.reduce((prev, current) => 
+        ( prev.subjects[1].Toan > current.subjects[1].Toan) ? prev : current
+    );
+    var minToan = arr.reduce((prev, current) => 
+        ( prev.subjects[1].Toan < current.subjects[1].Toan) ? prev : current
+    );
+    // console.log("Sinh viên có điểm toán cao nhất là");
+    // console.log(maxToan);
+    let tempArr = [maxToan,minToan];
+    inDanhSach(tempArr);
 }
-filterBtns[5].addEventListener('click',function(){
-    sinhVienCoDiemToanCaoNhat(danhSach);
-});
-function sinhVienCoDiemToanThapNhat(arr){
-    const minToan = arr.reduce((prev, current) => (prev.y < current.y) ? current : prev);
-    console.log("Sinh viên có điểm toán thấp nhất là");
-    console.log(minToan);
-
-    // inDanhSach(minToan);
-    showClass.innerHTML = `
-    <div class="student">
-        <p>${minToan.name}</p>
-        <p>điểm trung bình:  ${minToan.mark}</p>
-        <p>giới tính: ${minToan.gender}</p>
-        <p>điểm Lý: ${minToan.subjects[0].Ly}</p>
-        <p>điểm Toán: ${minToan.subjects[1].Toan}</p>
-        </div>
-    </br>
-    `;
-}
-filterBtns[6].addEventListener('click',function(){
-    sinhVienCoDiemToanThapNhat(danhSach);
-});
-
+filterBtns[5].addEventListener('click',() => sinhVienCoDiemToanCaoNhatVaThapNhat(danhSach));
 
 
 // 7.XÓA KHỎI DANH SÁCH SINH VIÊN CÓ ĐIỂM TÍCH LŨY TÍCH LŨY LÀ 0
@@ -201,19 +161,20 @@ function xoaSVCodiemTichLuyBang0(arr){
     inDanhSach(danhSach);
     return danhSach;
 }
-filterBtns[7].addEventListener('click',function(){
+filterBtns[6].addEventListener('click',function(){
     xoaSVCodiemTichLuyBang0(danhSach);
 });
 
 
 // 8.THÊM 3 SINH VIÊN MỚI VÀO DANH SÁCH
-function themSinhVien(arr, pushArr){
-    arr.push(pushArr);
+function themSinhVien(arr){
+    let user11 = new Student("Nguyễn Thị Y", 5,"Nữ",[{"Ly": 3},{"Toan": 4}]);
+    let user12 = new Student("Nguyễn Văn O", 3,"Nữ",[{"Ly": 4},{"Toan": 9}]);
+    let user13 = new Student("Nguyễn Văn K", 7,"Nữ",[{"Ly": 5},{"Toan": 8}]);
+    arr.push(user11, user12, user13);
+    inDanhSach(arr);
 }
-var user11 = new Student("Nguyễn Thị Y", 5,"Nữ",[{"Ly": 3},{"Toan": 4}]);
-var user12 = new Student("Nguyễn Văn O", 3,"Nữ",[{"Ly": 4},{"Toan": 9}]);
-var user13 = new Student("Nguyễn Văn K", 7,"Nữ",[{"Ly": 5},{"Toan": 8}]);
-// themSinhVien(danhSach, user11);
-// themSinhVien(danhSach, user12);
-// themSinhVien(danhSach, user13);
-console.log(danhSach);
+filterBtns[7].addEventListener('click', () => themSinhVien(danhSach));
+
+
+
