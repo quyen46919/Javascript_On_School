@@ -16,7 +16,7 @@ h3{
     padding: 1rem;
     text-align: center;
 }
-.student{
+.student,.table-name{
     margin: 0;
     display: flex;
     border: 1px solid gray;
@@ -33,6 +33,10 @@ h3{
 .student:hover{
     transform: scale(1.05);
     background: #8adcff;
+}
+.student p, .table-name p{
+    width: 15%;
+    text-align: center;
 }
 /* .student:nth-child(1){
     background-color: rgb(15, 131, 151);

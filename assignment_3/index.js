@@ -45,10 +45,10 @@ function inDanhSach(arr){
     var html = arr.map(student => `
     <div class="student">
               <p>${student.name}</p>
-              <p>điểm trung bình:  ${student.mark}</p>
-              <p>giới tính: ${student.gender}</p>
-              <p>điểm Lý: ${student.subjects[0].Ly}</p>
-              <p>điểm Toán: ${student.subjects[1].Toan}</p>
+              <p>${student.mark}</p>
+              <p>${student.gender}</p>
+              <p>${student.subjects[0].Ly}</p>
+              <p>${student.subjects[1].Toan}</p>
     </div>
     `
     ).join('');
@@ -58,6 +58,7 @@ inDanhSach(danhSach);
 
 // hien thi danh sach da backup
 filterBtns[0].addEventListener('click',function(){
+    danhSach = [...backupDanhSach];
     inDanhSach(backupDanhSach);
 })
 
